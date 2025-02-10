@@ -6,6 +6,19 @@
   <link href="./output.css" rel="stylesheet">
   <script defer src="../assets/fontawesome/js/fontawesome.min.js"></script>
   <script defer src="../assets/fontawesome/js/solid.min.js"></script>
+  <script>
+    window.onload = () => {
+        const mobileMenuIcon = document.getElementById('mobile-menu-button');
+        mobileMenuIcon.addEventListener('click', () => {
+            if(mobileMenuIcon.classList.contains('open')){
+                mobileMenuIcon.classList.remove('open');
+            } else {
+                mobileMenuIcon.classList.add('open');
+            }
+        })
+
+    }
+  </script>
 </head>
 <body>
 <div class="btn text-5xl"></div>
@@ -20,10 +33,10 @@
                 </div>
             </div>
             <div class="my-auto ml-auto block cursor-pointer pr-4 md:hidden">
-                <div>
-                    <div class="h-1 w-8 rounded-full bg-zinc-200"></div>
-                    <div class="h-1 w-8 rounded-full bg-zinc-200 mt-1"></div>
-                    <div class="h-1 w-8 rounded-full bg-zinc-200 mt-1"></div>
+                <div id="mobile-menu-button" class="group">
+                    <div class="h-1 w-8 rounded-full bg-zinc-200 group-open:rotate-45 transition-all group-open:top-2 relative"></div>
+                    <div class="transition-all opacity-110 group-open:opacity-0 h-1 w-8 rounded-full bg-zinc-200 mt-1"></div>
+                    <div class="transition-all group-open:-rotate-45 group-open:-top-2 h-1 w-8 rounded-full bg-zinc-200 mt-1 relative"></div>
                 </div>
             </div>
             <div class="hidden md:flex flex-1 items-center justify-end">
