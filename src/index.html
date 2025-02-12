@@ -26,6 +26,20 @@
             }
         })
 
+        const previousButton = document.getElementById('previous');
+        const nextButton = document.getElementById('next');
+        const carousel =  document.getElementById('carousel');
+        
+        nextButton.addEventListener('click', () => {
+            const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+            carousel.scrollLeft = carousel.scrollLeft + itemWidth;
+        });
+
+        previousButton.addEventListener('click', () => {
+            const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+            carousel.scrollLeft = carousel.scrollLeft - itemWidth;
+        });
+
     }
   </script>
 </head>
@@ -93,6 +107,84 @@
                 </div>
             </div>
         </nav>
+        <div class="bg-[url('../assets/images/hero.jpg')] bg-cover bg-center bg-fixed min-h-[400px] flex flex-col items-center justify-center h-[calc(100vh-200px)]">
+            <div class="bg-white/30 px-4 py-2 rounded-xl text-center backdrop-blur-md">
+                <div class="relative ">
+                    <img src="../assets/images/logo.png" width="175" />
+                    <div class="flex items-center justify-center mt-[-70px] mb-5">
+                        <div class="bg-pink-500 w-14 h-14 rounded-full flex items-center justify-center gap-1 ">
+                            <div class="h-2 w-1 bg-pink-300 animate-wavey"></div>
+                            <div class="h-3 w-1 bg-pink-200 animate-wavey animation-delay-200"></div>
+                            <div class="h-4 w-1 bg-pink-100 animate-wavey animation-delay-[150ms]" ></div>
+                            <div class="h-3 w-1 bg-pink-200 animate-wavey animation-delay-300"></div>
+                            <div class="h-2 w-1 bg-pink-300 animate-wavey animation-delay-[75ms]"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-5xl font-bold">
+                    tw:<span class="text-sky-900">mf</span>
+                </div>
+            </div>
+            <div class="font-bold mt-3 text-sm">
+                Kepp me updated with news and promotions
+            </div>
+            <form class="mt-3 flex gap-2">
+                <input type="email" placeholder="Email" class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900  placeholder-zinc-500 caret-pink-500 outline-pink-500  focus:outline">
+                <button type="submit" class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg hover:shadow-black/20 ">
+                    Subscribe
+                </button>    
+            </form>
+        </div>
     </header>
+    <div class="max-w-screen-lg mx-auto mt-20">
+        <h2 class="text-5xl">Headlines</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+        </p>
+        <div class="flex">
+            <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band1.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band2.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary2</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band3.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary3</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band4.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary4</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band5.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary5</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band6.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary6</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+                <div class="min-w-[80%] md:min-w-[40%]">
+                    <div style="background-image: url('../assets/images/band7.jpg');" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                    <h5 class="mt-2">Corduroy Gary7</h5>
+                    <h6>1st July 9PM - Main Stage </h6>
+                </div>
+            </div>
+            <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
 </main>
 </html>
